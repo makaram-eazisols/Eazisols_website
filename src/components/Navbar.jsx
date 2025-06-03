@@ -34,7 +34,7 @@ function Navbar() {
 
         {/* Right: Nav Links */}
         <Box sx={{ display: 'flex', gap: 2 }}>
-          {['Home', 'About', 'Services', 'Contact'].map((label) => (
+          {['Home', 'About', 'Services', 'Contact Us'].map((label) => (
             <Button
               key={label}
               sx={{
