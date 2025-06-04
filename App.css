@@ -1,33 +1,16 @@
-/* Dropdown transition for nav item */
-.nav-item-wrapper {
-  position: relative;
+.paneffect {
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: bottom center;
 }
 
-.nav-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-
-.nav-item-wrapper:hover .nav-dropdown {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-
-.nav-item-wrapper:hover .MuiButton-endIcon {
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
-}
-
-.get-quote .MuiButton-endIcon {
-  transition: transform 0.3s ease;
-}
-.get-quote:hover .MuiButton-endIcon {
-  transform: translateX(4px);
+@keyframes sway {
+  0% {
+    transform: rotate(1deg);
+  }
+  50% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
 }

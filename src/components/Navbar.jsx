@@ -66,25 +66,6 @@ function Navbar() {
         </Typography>
       </Box>
 
-        {/* Right: Nav Links */}
-        {/* <Box sx={{ display: 'flex', gap: 2 }}>
-          {['Home', 'About', 'Services', 'Contact Us'].map((label) => (
-            <Button
-              key={label}
-              sx={{
-                color: '#2c3e50',
-                fontWeight: 500,
-                textTransform: 'none',
-                '&:hover': {
-                  backgroundColor: alpha('#2c3e50', 0.08),
-                },
-              }}
-            >
-              {label}
-            </Button>
-          ))}
-        </Box> */}
-
        <Box className="d-none d-lg-flex" sx={{ gap: 3, justifyContent: 'end', ml: 35,}}>
   {navItems.map(({ label, active }) => (
     <Box className="nav-item-wrapper" key={label}>
@@ -109,7 +90,7 @@ function Navbar() {
 
   <Button
     variant="contained"
-    endIcon={<ArrowForwardIosIcon sx={{ fontSize: 16 }} />}
+    endIcon={<ArrowForwardIosIcon sx={{ fontSize: 16, }} />}
     className="get-quote"
     sx={{
       fontSize: '14px',
@@ -122,6 +103,7 @@ function Navbar() {
       '&:hover': {
         backgroundColor: '#6b3dff',
         boxShadow: 'none',
+      
       },
     }}
   >
