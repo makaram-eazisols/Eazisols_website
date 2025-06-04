@@ -66,7 +66,6 @@ function Navbar() {
         </Typography>
       </Box>
 
-<<<<<<< Updated upstream
         {/* Right: Nav Links */}
         <Box sx={{ display: 'flex', gap: 2 }}>
           {['Home', 'About', 'Services', 'Contact Us'].map((label) => (
@@ -85,7 +84,7 @@ function Navbar() {
             </Button>
           ))}
         </Box>
-=======
+
        <Box className="d-none d-lg-flex" sx={{ gap: 3, justifyContent: 'end', ml: 35,}}>
   {navItems.map(({ label, active }) => (
     <Box className="nav-item-wrapper" key={label}>
@@ -129,8 +128,7 @@ function Navbar() {
     Get a quote
   </Button>
 </Box>
-        
->>>>>>> Stashed changes
+
       </Toolbar>
  
     </AppBar>
