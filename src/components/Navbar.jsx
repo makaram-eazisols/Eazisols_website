@@ -67,7 +67,7 @@ function Navbar() {
       </Box>
 
         {/* Right: Nav Links */}
-        <Box sx={{ display: 'flex', gap: 2 }}>
+        {/* <Box sx={{ display: 'flex', gap: 2 }}>
           {['Home', 'About', 'Services', 'Contact Us'].map((label) => (
             <Button
               key={label}
@@ -83,7 +83,7 @@ function Navbar() {
               {label}
             </Button>
           ))}
-        </Box>
+        </Box> */}
 
        <Box className="d-none d-lg-flex" sx={{ gap: 3, justifyContent: 'end', ml: 35,}}>
   {navItems.map(({ label, active }) => (
@@ -128,7 +128,6 @@ function Navbar() {
     Get a quote
   </Button>
 </Box>
-
       </Toolbar>
  
     </AppBar>
