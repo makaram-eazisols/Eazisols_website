@@ -2,14 +2,15 @@ import React from 'react';
 import { Box, Typography, Button, Container, Stack } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import pic5 from '../assets/pic5.png';
+import CustomButton from './reusable/CustomButton';
 
 function HeroSection() {
   return (
     <Box
       sx={{
         backgroundColor: '#f9f9ff',
-        height: '100vh',
         display: 'flex',
+        height: '100vh',
         alignItems: 'center',
         overflow: 'hidden',
       }}
@@ -66,25 +67,12 @@ function HeroSection() {
               at elit fringilla ac at purus.
             </Typography>
 
-            <Button
-              variant="contained"
-              endIcon={<ArrowForwardIcon />}
-              sx={{
-                backgroundColor: '#8a6cff',
-                textTransform: 'uppercase',
-                fontWeight: 600,
-                px: 4,
-                py: 1.5,
-                fontSize: '14px',
-                boxShadow: 'none',
-                '&:hover': {
-                  backgroundColor: '#7756e3',
-                  boxShadow: 'none',
-                },
-              }}
-            >
-              Learn More
-            </Button>
+            <CustomButton
+             variant="contained"
+             endIcon={<ArrowForwardIcon />}
+              >
+               Learn More
+            </CustomButton>
           </Box>
 
         </Stack>
