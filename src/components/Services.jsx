@@ -30,7 +30,8 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="container py-5">
+    <div className="container py-5"
+    >
       <p className="text-center text-secondary fw-bold mb-1">SERVICES</p>
       <Typography
         variant="h3"

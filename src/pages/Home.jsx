@@ -7,6 +7,9 @@ import MouseFollower from '../components/MouseFollower';
 import AboutSection from '../components/AboutSection';
 import Services from '../components/Services';
 import Sections from '../components/Sections';
+import Status from '../components/Status';
+import Features from '../components/Features';
+
 
 
 function Home() {
@@ -18,6 +21,8 @@ function Home() {
       <Sections />
       <Services />
       <AboutSection />
+      <Status />
+      <Features />
       <ServicesSection />
       <Footer />
     </>
