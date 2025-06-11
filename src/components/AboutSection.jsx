@@ -51,7 +51,7 @@ const AboutSection = () => {
 
 const styles = {
   container: {
-    padding: '100px 80px',
+    padding: '60px 80px',
     backgroundColor: '#fff',
   },
   row: {

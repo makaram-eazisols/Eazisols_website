@@ -10,12 +10,15 @@ const Features = () => {
     <Box component="section" sx={styles.container}>
       <Box sx={styles.row}>
         <Box sx={styles.left}>
-          <Typography sx={styles.subTitle}>FETURES</Typography>
+          <Typography sx={styles.subTitle}>FEATURES</Typography>
           <Typography sx={styles.title}>OUR WORK FLOW</Typography>
 
+          {/* Workflow Step 1 */}
           <Box sx={styles.workflowStep}>
-            <Box sx={{ ...styles.iconBox, borderColor: '#ff4a5c', color: '#ff4a5c' }}>
-              <LightbulbIcon sx={styles.icon} />
+            <Box sx={{ ...styles.iconWrapper, borderColor: '#ff4a5c' }}>
+              <Box sx={{ ...styles.iconInner, backgroundColor: '#fff' }}>
+                <LightbulbIcon sx={{ ...styles.icon, color: '#ff4a5c' }} />
+              </Box>
             </Box>
             <Box>
               <Typography sx={styles.stepTitle}>Idea & Analysis Gathering</Typography>
@@ -26,11 +29,14 @@ const Features = () => {
             </Box>
           </Box>
 
-          <Box sx={styles.workflowStep}>
-            <Box sx={{ ...styles.iconBox, borderColor: '#ffae00', color: '#ffae00' }}>
-              <LaptopMacIcon sx={styles.icon} />
+          {/* Workflow Step 2 */}
+          <Box sx={{ ...styles.workflowStep, ml: 8 }}>
+            <Box sx={{ ...styles.iconWrapper, borderColor: '#ffae00' }}>
+              <Box sx={{ ...styles.iconInner, backgroundColor: '#fff' }}>
+                <LaptopMacIcon sx={{ ...styles.icon, color: '#ffae00' }} />
+              </Box>
             </Box>
-            <Box>
+            <Box sx={{ pl: 4 }}>
               <Typography sx={styles.stepTitle}>Designing & Developing</Typography>
               <Typography sx={styles.stepText}>
                 Mauris eleifend ipsum dolor, sit amet elementum tortor mattis interdum.
@@ -39,9 +45,12 @@ const Features = () => {
             </Box>
           </Box>
 
+          {/* Workflow Step 3 */}
           <Box sx={styles.workflowStep}>
-            <Box sx={{ ...styles.iconBox, borderColor: '#00c7a5', color: '#00c7a5' }}>
-              <RocketLaunchIcon sx={styles.icon} />
+            <Box sx={{ ...styles.iconWrapper, borderColor: '#00c7a5' }}>
+              <Box sx={{ ...styles.iconInner, backgroundColor: '#fff' }}>
+                <RocketLaunchIcon sx={{ ...styles.icon, color: '#00c7a5' }} />
+              </Box>
             </Box>
             <Box>
               <Typography sx={styles.stepTitle}>Testing & Launching</Typography>
@@ -65,18 +74,17 @@ const styles = {
   container: {
     padding: '100px 80px',
     backgroundColor: '#fff',
-    // marginTop :'10px'
   },
   row: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
-    gap: '50px',
   },
   left: {
     flex: '1 1 50%',
     minWidth: '500px',
+    position: 'relative',
   },
   right: {
     flex: '1 1 45%',
@@ -101,20 +109,34 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: '20px',
-    marginBottom: '30px',
+    marginBottom: '45px',
+    position: 'relative',
   },
-  iconBox: {
-    width: '80px',
-    height: '80px',
+
+  iconWrapper: {
     borderRadius: '50%',
-    border: '6px double',
+    border: '4px dashed',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    position: 'relative',
   },
+
+  iconInner: {
+    width: '60px',
+    height: '60px',
+    borderRadius: '50%',
+    backgroundColor: '#fff',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxShadow: '0 0 0 5px rgba(0, 0, 0, 0.05)',
+  },
+
   icon: {
-    fontSize: 40,
+    fontSize: 30,
   },
+
   stepTitle: {
     fontSize: '20px',
     fontWeight: 700,

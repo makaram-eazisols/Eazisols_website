@@ -9,6 +9,8 @@ import Services from '../components/Services';
 import Sections from '../components/Sections';
 import Status from '../components/Status';
 import Features from '../components/Features';
+import Portfolio from '../components/Portfolio';
+import NewsLetter from '../components/NewsLetter';
 
 
 
@@ -23,6 +25,8 @@ function Home() {
       <AboutSection />
       <Status />
       <Features />
+      <Portfolio />
+      <NewsLetter />
       <ServicesSection />
       <Footer />
     </>
