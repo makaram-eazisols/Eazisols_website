@@ -7,7 +7,8 @@ const AboutSection = () => {
   return (
     <Box component="section" sx={styles.container}>
       <Box sx={styles.row}>
-        <Box sx={styles.imageBox}>
+        <Box sx={styles.imageBox}
+        className="slide-in-left">
           <img
             src={pic4}
             className="paneffect"
@@ -16,7 +17,8 @@ const AboutSection = () => {
           />
         </Box>
 
-        <Box sx={styles.contentBox}>
+        <Box sx={styles.contentBox}
+        className="slide-in-right">
           <Typography component="h5" sx={styles.subTitle}>
             ABOUT US
           </Typography>

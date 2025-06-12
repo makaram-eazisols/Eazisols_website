@@ -1,5 +1,8 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
+import reddots from "../assets/reddots.png";
+import yellowdots from "../assets/yellowdots.png";
+import greendots from "../assets/greendots.png";
 
 const services = [
   {
@@ -7,24 +10,18 @@ const services = [
     description:
       "Fusce sit amet dui vitae urna tristique imperdiet. Donec eget sapien euismod, faucibus nibh non, consequat elit.",
     iconBg: "bg-warning",
-    dotClass: "dot-yellow",
-    icon: "https://img.icons8.com/external-flat-icons-inmotus-design/67/null/external-research-business-flat-icons-inmotus-design.png",
   },
   {
     title: "Web Development",
     description:
       "Fusce sit amet dui vitae urna tristique imperdiet. Donec eget sapien euismod, faucibus nibh non, consequat elit.",
     iconBg: "bg-danger",
-    dotClass: "dot-pink",
-    icon: "https://img.icons8.com/ios/50/ffffff/source-code.png",
   },
   {
     title: "Web Solution",
     description:
       "Fusce sit amet dui vitae urna tristique imperdiet. Donec eget sapien euismod, faucibus nibh non, consequat elit.",
     iconBg: "bg-success",
-    dotClass: "dot-green",
-    icon: "https://img.icons8.com/external-flat-icons-inmotus-design/67/ffffff/server.png",
   },
 ];
 
@@ -56,12 +53,6 @@ const Services = () => {
                   className={`rounded-circle d-flex align-items-center justify-content-center mx-auto ${service.iconBg}`}
                   style={{ width: 80, height: 80 }}
                 >
-                  <img
-                    src={service.icon}
-                    alt={service.title}
-                    width={40}
-                    height={40}
-                  />
                 </div>
               </Box>
               <h5 className="fw-bold mt-3">{service.title}</h5>

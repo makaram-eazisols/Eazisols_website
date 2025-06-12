@@ -11,6 +11,7 @@ import Status from '../components/Status';
 import Features from '../components/Features';
 import Portfolio from '../components/Portfolio';
 import NewsLetter from '../components/NewsLetter';
+import Clients from '../components/Clients';
 
 
 
@@ -27,6 +28,7 @@ function Home() {
       <Features />
       <Portfolio />
       <NewsLetter />
+      <Clients />
       <ServicesSection />
       <Footer />
     </>
