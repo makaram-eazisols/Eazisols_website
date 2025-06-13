@@ -1,39 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import { Typography, Box } from "@mui/material";
 import reddots from "../assets/reddots.png";
 import yellowdots from "../assets/yellowdots.png";
 import greendots from "../assets/greendots.png";
+import InsightsIcon from "@mui/icons-material/Insights";
+import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
+import LanIcon from "@mui/icons-material/Lan";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircle,
+  faSquare,
+  faXmark,
+  faStar,
+  faExclamationTriangle,
+} from "@fortawesome/free-solid-svg-icons";
 
 const services = [
   {
     title: "Strategy & Research",
     description:
       "Fusce sit amet dui vitae urna tristique imperdiet. Donec eget sapien euismod, faucibus nibh non, consequat elit.",
-    iconBg: "bg-warning",
+    dotImg: yellowdots,
+    icon: <InsightsIcon />,
+    bgColor: "#fea500",
   },
   {
     title: "Web Development",
     description:
       "Fusce sit amet dui vitae urna tristique imperdiet. Donec eget sapien euismod, faucibus nibh non, consequat elit.",
-    iconBg: "bg-danger",
+    dotImg: reddots,
+    icon: <DeveloperModeIcon />,
+    bgColor: "#ff5269",
   },
   {
     title: "Web Solution",
     description:
       "Fusce sit amet dui vitae urna tristique imperdiet. Donec eget sapien euismod, faucibus nibh non, consequat elit.",
-    iconBg: "bg-success",
+    dotImg: greendots,
+    icon: <LanIcon />,
+    bgColor: "#029e76",
   },
 ];
 
 const Services = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   return (
-    <div className="container py-5"
-    >
-      <p className="text-center text-secondary fw-bold mb-1">SERVICES</p>
+    <div className="container py-5 services-container">
+      <p className="section-subtitle text-center">SERVICES</p>
       <Typography
-        variant="h3"
+        variant="h2"
         align="center"
-        className="fw-bold mb-5"
+        className="section-title mb-5"
         style={{ fontWeight: 800 }}
       >
         PROVIDE AWESOME SERVICE
@@ -41,27 +58,58 @@ const Services = () => {
 
       <div className="row text-center">
         {services.map((service, index) => (
-          <div className="col-md-4 mb-4" key={index}>
-            <div
-              className={`p-4 service-box h-100 rounded shadow-sm ${
-                index === 0 ? "hover-highlight" : ""
-              }`}
-            >
-              <Box className="position-relative d-inline-block mb-3">
-                <div className={`dot-pattern ${service.dotClass}`}></div>
+          <div
+            className="col-lg-4 col-md-6 d-flex justify-content-center"
+            key={index}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <div className="service-card">
+              <div className="dot-icon-wrap">
+                <img src={service.dotImg} alt="dots" className="dot-image" />
                 <div
-                  className={`rounded-circle d-flex align-items-center justify-content-center mx-auto ${service.iconBg}`}
-                  style={{ width: 80, height: 80 }}
+                  className="icon-circle"
+                  style={{ backgroundColor: service.bgColor, color: "#fff" }}
                 >
+                  {service.icon}
                 </div>
-              </Box>
-              <h5 className="fw-bold mt-3">{service.title}</h5>
+                <FontAwesomeIcon
+                  icon={faCircle}
+                  className={`fly-icon yellow ${
+                    hoveredIndex === index ? "active" : ""
+                  }`}
+                />
+                <FontAwesomeIcon
+                  icon={faCircle}
+                  className={`fly-icon blue ${
+                    hoveredIndex === index ? "active" : ""
+                  }`}
+                />
+                <FontAwesomeIcon
+                  icon={faExclamationTriangle}
+                  className={`fly-icon pink ${
+                    hoveredIndex === index ? "active" : ""
+                  }`}
+                />
+                <FontAwesomeIcon
+                  icon={faSquare}
+                  className={`fly-icon green ${
+                    hoveredIndex === index ? "active" : ""
+                  }`}
+                />
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  className={`fly-icon red ${
+                    hoveredIndex === index ? "active" : ""
+                  }`}
+                />
+              </div>
+              <h5 className="fw-bold mt-4">{service.title}</h5>
               <p className="text-muted">{service.description}</p>
             </div>
           </div>
         ))}
       </div>
-
     </div>
   );
 };
