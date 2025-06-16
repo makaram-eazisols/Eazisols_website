@@ -12,7 +12,8 @@ import Features from '../components/Features';
 import Portfolio from '../components/Portfolio';
 import NewsLetter from '../components/NewsLetter';
 import Clients from '../components/Clients';
-// import ContactUs from '../components/ContactUs';
+import Show from '../components/Show';
+import ContactUs from '../components/ContactUs';
 
 
 
@@ -30,8 +31,9 @@ function Home() {
       <Portfolio />
       <NewsLetter />
       <Clients />
-      {/* <ContactUs /> */}
-      <ServicesSection />
+      <ContactUs />
+      <Show />
+      {/* <ServicesSection /> */}
       <Footer />
     </>
   );

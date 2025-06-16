@@ -57,10 +57,12 @@
 }
 
 .slider-wrapper {
-  padding: 100px 0;
+  /* padding: 100px 0; */
   background-color: #ffffff;
   max-width: 1200px;
   margin: auto;
+  padding-top: 115px;
+  padding-bottom: 0;
 }
 
 
@@ -223,37 +225,6 @@
   transform: translateX(-80%);
 }
 
-.icon-circle svg {
-  transform: translateY(30px);
-  font-size: 40px !important;
-   color: white;
-   margin: 0;
-  padding: 0;
-  line-height: 1;
-  display: block;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-}
-
-.service-card:hover .icon-circle svg {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* .fly-shape.circle.active {
-  transform: translate(-90px, -40px);
-}
-.fly-shape.square.active {
-  transform: translate(60px, -40px);
-}
-.fly-shape.triangle.active {
-  transform: translate(-70px, 50px);
-}
-.fly-shape.cross.active {
-  transform: translate(70px, 50px);
-}
-.fly-shape.star.active {
-  transform: translate(0px, -70px);
-} */
 .fly-icon {
   position: absolute;
   top: 50%;
@@ -301,10 +272,62 @@
   transform: translate(-180px, 0px);
 }
  
-.dot-icon-wrap {
-  overflow: visible;
-  position: relative;
+
+@keyframes imageFloatOnce {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  51% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
+.service-card:hover .icon-circle > img {
+  animation: imageFloatOnce 1.0s ease-in-out 1;
+}
+
+/* custom button Icon hover animation */
+
+.custom-button .animated-end-icon {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.custom-button:hover .animated-end-icon {
+  animation: arrowHoverEffect 0.6s ease;
+}
+@keyframes arrowHoverEffect {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.custom-button:hover {
+  background-color: #5f3beb !important;
+  color: #ffffff !important;
+}
+
+
+
 
 
 

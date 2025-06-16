@@ -14,6 +14,7 @@ import logoPurple3 from '../assets/logoPurple3.png';
 import logoPurple4 from '../assets/logoPurple4.png';
 import logoPurple5 from '../assets/logoPurple5.png';
 import logoPurple6 from '../assets/logoPurple6.png';
+import servicebg from '../assets/servicebg.png';
 
 const imageData = [
   { id: 1, defaultSrc: logoPurple1, hoverSrc: logo1, alt: "Logo 1" },
@@ -43,6 +44,14 @@ const SectionsSlider = () => {
   };
 
   return (
+     <div
+    style={{
+      backgroundImage: `url(${servicebg})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+    }}
+  >
     <div className="slider-wrapper">
       <Slider {...settings}>
         {imageData.map((image) => (
@@ -52,6 +61,7 @@ const SectionsSlider = () => {
           </div>
         ))}
       </Slider>
+    </div>
     </div>
   );
 };

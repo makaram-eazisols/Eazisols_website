@@ -1,12 +1,16 @@
 import React from "react";
 import { Box, Typography, TextField, Button } from "@mui/material";
 import img9 from "../assets/img9.png";
+import newsbackg from "../assets/newsbackg.png";
 
 const NewsLetter = () => {
   return (
     <Box
       sx={{
-        background: "linear-gradient(135deg, #7b55ec 0%, #806bf7 100%)",
+        background: `url(${newsbackg}), linear-gradient(135deg, #7b55ec 0%, #806bf7 100%)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         py: 10,
         px: 2,
         mt: 10,
@@ -48,7 +52,7 @@ const NewsLetter = () => {
               maxWidth: { xs: "100%", md: "58.3333%", lg: "66.6667%" },
               px: { xs: 0, md: 2 },
             }}
-            className="slide-in-right" 
+            className="slide-in-right"
           >
             {/* TEXT CONTENT */}
             <Box>

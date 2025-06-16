@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import CustomButton from './reusable/CustomButton';
 import pic4 from '../assets/pic5.png';
+import bg19 from '../assets/bg19.png';
 
 const AboutSection = () => {
   return (
@@ -43,7 +44,7 @@ const AboutSection = () => {
           </Typography>
 
           <Box sx={styles.buttonWrapper}>
-            <CustomButton>LEARN MORE</CustomButton>
+            <CustomButton variant="contained">Learn More</CustomButton>
           </Box>
         </Box>
       </Box>
@@ -53,8 +54,12 @@ const AboutSection = () => {
 
 const styles = {
   container: {
-    padding: '60px 80px',
+    padding: '115px 80px 85px 80px',
     backgroundColor: '#fff',
+     backgroundImage: `url(${bg19})`,
+    backgroundSize: 'cover',         
+    backgroundPosition: 'center',   
+    backgroundRepeat: 'no-repeat', 
   },
   row: {
     display: 'flex',

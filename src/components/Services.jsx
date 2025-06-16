@@ -3,9 +3,9 @@ import { Typography, Box } from "@mui/material";
 import reddots from "../assets/reddots.png";
 import yellowdots from "../assets/yellowdots.png";
 import greendots from "../assets/greendots.png";
-import InsightsIcon from "@mui/icons-material/Insights";
-import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
-import LanIcon from "@mui/icons-material/Lan";
+import strategy from "../assets/strategy.png";
+import wdev from "../assets/wdev.png";
+import wsol from "../assets/wsol.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircle,
@@ -21,7 +21,6 @@ const services = [
     description:
       "Fusce sit amet dui vitae urna tristique imperdiet. Donec eget sapien euismod, faucibus nibh non, consequat elit.",
     dotImg: yellowdots,
-    icon: <InsightsIcon />,
     bgColor: "#fea500",
   },
   {
@@ -29,7 +28,6 @@ const services = [
     description:
       "Fusce sit amet dui vitae urna tristique imperdiet. Donec eget sapien euismod, faucibus nibh non, consequat elit.",
     dotImg: reddots,
-    icon: <DeveloperModeIcon />,
     bgColor: "#ff5269",
   },
   {
@@ -37,7 +35,6 @@ const services = [
     description:
       "Fusce sit amet dui vitae urna tristique imperdiet. Donec eget sapien euismod, faucibus nibh non, consequat elit.",
     dotImg: greendots,
-    icon: <LanIcon />,
     bgColor: "#029e76",
   },
 ];
@@ -45,7 +42,8 @@ const services = [
 const Services = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   return (
-    <div className="container py-5 services-container">
+    <div className="container services-container"
+    style={{paddingTop: '115px', paddingBottom: 0,}}>
       <p className="section-subtitle text-center">SERVICES</p>
       <Typography
         variant="h2"
@@ -67,12 +65,33 @@ const Services = () => {
             <div className="service-card">
               <div className="dot-icon-wrap">
                 <img src={service.dotImg} alt="dots" className="dot-image" />
-                <div
+                {/* <div
                   className="icon-circle"
                   style={{ backgroundColor: service.bgColor, color: "#fff" }}
                 >
                   {service.icon}
+                </div> */}
+                <div
+                  className="icon-circle d-flex align-items-center justify-content-center"
+                  style={{
+                    backgroundColor: service.bgColor,
+                    width: "80px",
+                    height: "80px",
+                    borderRadius: "50%",
+                  }}
+                >
+                  <img
+                    src={index === 0 ? strategy : index === 1 ? wdev : wsol}
+                    alt="service icon"
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      objectFit: "contain",
+                      filter: "brightness(0) invert(1)",
+                    }}
+                  />
                 </div>
+
                 <FontAwesomeIcon
                   icon={faCircle}
                   className={`fly-icon yellow ${

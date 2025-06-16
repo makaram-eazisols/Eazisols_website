@@ -2,6 +2,8 @@ import React from "react";
 import { Box, Typography, Button, Container, Stack } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import pic5 from "../assets/pic5.png";
+import bg18 from "../assets/bg18.png";
+import hero2 from "../assets/hero2.png";
 import CustomButton from "./reusable/CustomButton";
 
 function HeroSection() {
@@ -11,9 +13,13 @@ function HeroSection() {
         backgroundColor: "#f9f9ff",
         display: "flex",
         height: "80vh",
-        marginTop:'80px',
+        marginTop: "80px",
         alignItems: "center",
         overflow: "hidden",
+        backgroundImage: `url(${hero2}), url(${bg18})`,
+        backgroundSize: "contain, cover",
+        backgroundPosition: "right center, center",
+        backgroundRepeat: "no-repeat, no-repeat",
       }}
     >
       <Container maxWidth="lg" className="d-flex">
@@ -24,10 +30,7 @@ function HeroSection() {
           spacing={1}
         >
           {/* Text Content */}
-          <Box 
-          sx={{ flex: 1, width:'80%', }}
-          className="slide-in-left"
-          >
+          <Box sx={{ flex: 1, width: "80%" }} className="slide-in-left">
             <Typography
               sx={{
                 fontSize: "16px",
@@ -70,9 +73,7 @@ function HeroSection() {
               Pellentesque vitae ante at elit fringilla ac at purus.
             </Typography>
 
-            <CustomButton variant="contained" endIcon={<ArrowForwardIcon />}>
-              Learn More
-            </CustomButton>
+            <CustomButton variant="contained">Learn More</CustomButton>
           </Box>
         </Stack>
         <Box
