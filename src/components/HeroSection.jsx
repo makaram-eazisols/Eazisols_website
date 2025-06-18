@@ -1,12 +1,39 @@
-import React from "react";
-import { Box, Typography, Button, Container, Stack } from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import React, { useEffect } from "react";
+import { Box, Typography, Container, Stack } from "@mui/material";
 import pic5 from "../assets/pic5.png";
 import bg18 from "../assets/bg18.png";
 import hero2 from "../assets/hero2.png";
 import CustomButton from "./reusable/CustomButton";
 
 function HeroSection() {
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .slide-up {
+      opacity: 0;
+      animation: slideUp 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; 
+      animation-fill-mode: both;
+    }
+      }
+    `;
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   return (
     <Box
       sx={{
@@ -30,8 +57,9 @@ function HeroSection() {
           spacing={1}
         >
           {/* Text Content */}
-          <Box sx={{ flex: 1, width: "80%" }} className="slide-in-left">
+          <Box sx={{ flex: 1, width: "80%" }}>
             <Typography
+              className="slide-up"
               sx={{
                 fontSize: "16px",
                 fontWeight: 600,
@@ -39,12 +67,14 @@ function HeroSection() {
                 letterSpacing: "1px",
                 mb: 1,
               }}
+              style={{ animationDelay: "0.1s" }}
             >
               WE CREATE IDEAS
             </Typography>
 
             <Typography
               component="div"
+              className="slide-up"
               sx={{
                 fontSize: "48px",
                 fontWeight: 800,
@@ -52,6 +82,7 @@ function HeroSection() {
                 lineHeight: 1.2,
                 mb: 2,
               }}
+              style={{ animationDelay: "0.3s" }}
             >
               HOW WE CAN HELP <br />
               YOUR{" "}
@@ -61,6 +92,7 @@ function HeroSection() {
             </Typography>
 
             <Typography
+              className="slide-up"
               sx={{
                 fontSize: "16px",
                 color: "#555",
@@ -68,12 +100,15 @@ function HeroSection() {
                 lineHeight: 1.6,
                 maxWidth: "90%",
               }}
+              style={{ animationDelay: "0.5s" }}
             >
               Morbi sed lacus nec risus finibus feugiat et fermentum nibh.
               Pellentesque vitae ante at elit fringilla ac at purus.
             </Typography>
 
-            <CustomButton variant="contained">Learn More</CustomButton>
+            <div className="slide-up" style={{ animationDelay: "0.7s" }}>
+              <CustomButton variant="contained">Learn More</CustomButton>
+            </div>
           </Box>
         </Stack>
         <Box
@@ -90,7 +125,7 @@ function HeroSection() {
             p: 0,
             mt: 3,
           }}
-        ></Box>
+        />
       </Container>
     </Box>
   );
